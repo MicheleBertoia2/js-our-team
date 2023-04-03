@@ -68,7 +68,6 @@ const teamMembers   = [
 
 //2.
 for (const member of teamMembers) {
-  console.log(member.image);
     // //3.
     // teamContainer.innerHTML += `
     //   <p>${key} ${member[key]} </p>
@@ -76,7 +75,7 @@ for (const member of teamMembers) {
     const column = document.createElement('div');
     column.classList.add('col-md-4');
     const card = document.createElement('div');
-    card.classList.add('card', 'mb-5');
+    card.classList.add('card', 'mb-5', 'text-center');
     card.innerHTML = `
     <img src="assets/img/${member.image}">
     <h5>${member.name}</h5>
