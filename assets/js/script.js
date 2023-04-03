@@ -21,6 +21,7 @@ Organizzare i singoli membri in card/schede
 1. creare l'array con i membri del team
 2. milestone 1
 3. milestone 2
+4. creo direttamente nella row del team la col con la card
 */
 
 
@@ -67,12 +68,21 @@ const teamMembers   = [
 
 //2.
 for (const member of teamMembers) {
-  for(let key in member){
-    const memberCard = member[key]
-    console.log(memberCard);
-    //3.
-    teamContainer.innerHTML += `
-      <p>${key} ${member[key]} </p>
+  
+    // //3.
+    // teamContainer.innerHTML += `
+    //   <p>${key} ${member[key]} </p>
+    // `
+    const column = document.createElement('div');
+    column.classList.add('col-md-4');
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.innerHTML = `
+    <img src="${member.image}">
+    <h5>${member.name}</h5>
+    <p>${member.role}</p>
     `
-  }
+    column.append(card)
+    teamContainer.append(column)
+  
 }
